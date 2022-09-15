@@ -47,12 +47,9 @@ def data_for_user():
                      password='ivan456'))  # User registration
 
     creating_restaurant_response = client.post("/api/restaurant/add/", dict(name='McDonalds',
-                                                        address='Kiltseva Road, 1, Kiev, 02000'))  # Creating restaurant
+                                                                            address='Kiltseva Road, 1, Kiev, 02000'))  # Creating restaurant
 
     id_rest = creating_restaurant_response.data['id']  # ID of created restaurant
-
-    client.put(f"/api/restaurant/{id_rest}/update/",
-               dict(name='McDonalds', address='Independence Square, 1, Kiev, 02000'))  # Updating restaurant
 
     with open('test_image.png', 'rb') as fp:
         client.post('/api/adding_menu/', {'restaurant': id_rest, 'image': fp})  # Creating menu for the restaurant
@@ -69,5 +66,3 @@ def media_cleaning():
                 os.remove(months + "/" + image)
             if len(os.listdir(months)) == 0:
                 os.rmdir(months)
-
-

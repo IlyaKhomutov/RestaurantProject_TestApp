@@ -19,8 +19,12 @@ class RegistrationAPIView(generics.GenericAPIView):
 
 class ResultViewSet(viewsets.ModelViewSet):
     today = datetime.date.today()
-    queryset = Vote.objects.filter(date=today)
     serializer_class = ResultSerializer
+
+    def get_queryset(self):
+        today = datetime.date.today()
+        queryset = Vote.objects.filter(date=today)
+        return queryset
 
 
 class ProfileViewSet(viewsets.ModelViewSet):

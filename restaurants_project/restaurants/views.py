@@ -36,11 +36,14 @@ class AddingMenuViewSet(viewsets.ModelViewSet):
 
 
 class TodayMenusViewSet(viewsets.ModelViewSet):
-    today = datetime.date.today()
-    queryset = Menu.objects.filter(date=today)
     permission_classes = (IsAuthenticated,)
     serializer_class = TodayMenusSerializer
     lookup_field = 'id'
+
+    def get_queryset(self):
+        today = datetime.date.today()
+        queryset = Menu.objects.filter(date=today)
+        return queryset
 
 
 class TodayRestaurantMenusViewSet(viewsets.ModelViewSet):
