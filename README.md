@@ -24,10 +24,10 @@ versions. The mobile app always sends the build version in headers
 6. Getting results for the current day
 
 # How to run tests:
-- Create local virtual enviroment
-- Run "pip install -r requirements.txt"
-- Go to the folder with tests <tests/restaurant_project>
-- Run them using command "pytest" or directly from "test_user.py"
+1. Create local virtual enviroment
+2. Run "pip install -r requirements.txt"
+3. Go to the folder with tests <tests/restaurant_project>
+4. Run them using command "pytest" or directly from "test_user.py"
 
 #   How to run the system:
 1. Clone code
