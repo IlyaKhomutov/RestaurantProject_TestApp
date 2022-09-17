@@ -49,7 +49,7 @@ versions. The mobile app always sends the build version in headers
 - Add menu for any restaurant: ("/api/adding_menu/")
 
 # How to run tests:
-1. Create local virtual enviroment anc activate it
+1. Create local virtual enviroment and activate it
 2. Run "pip install -r requirements.txt"
 3. Go to the folder with tests "tests/restaurant_project"
 4. Run them using command "pytest" or directly from "test_user.py"
