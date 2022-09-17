@@ -37,7 +37,7 @@ versions. The mobile app always sends the build version in headers
 (All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
 - Check their profile: ("/api/profile/")
 - Check all restaurant and their menus for all days: ("/api/restaurants/")
-- Check today's menus of a specific restaurant: ("/api/restaurant/<uuid:id>/menus/")
+- Check today's menus of a specific restaurant: ("/api/restaurant/&lt;uuid:id&gt;/menus/")
 - Check all today's menus: ("/api/menus/")
 - Vote: ("api/vote/")
 - Check results of the today's vote: ("/api/result/")
@@ -45,11 +45,11 @@ versions. The mobile app always sends the build version in headers
 # Users with Admin privileges can:
 - All the features of a regular user
 - Create restaurant: ("/api/restaurant/add/")
-- Update restaurant: ("/api/restaurant/<uuid:id>/update/")
+- Update restaurant: ("/api/restaurant/&lt;uuid:id&gt;/update/")
 - Add menu for any restaurant: ("/api/adding_menu/")
 
 # How to run tests:
-1. Create local virtual enviroment
+1. Create local virtual enviroment anc activate it
 2. Run "pip install -r requirements.txt"
-3. Go to the folder with tests <tests/restaurant_project>
+3. Go to the folder with tests "tests/restaurant_project"
 4. Run them using command "pytest" or directly from "test_user.py"
