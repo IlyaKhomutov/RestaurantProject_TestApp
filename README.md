@@ -25,13 +25,13 @@ versions. The mobile app always sends the build version in headers
 
 #   How to run the system:
 1. Clone code
-2. Go to application root folder: "RestaurantProject_TestApp/restaurants_project/"
+2. Go to application root folder: "RestaurantProject_TestApp/restaurants_project"
 3. Create .env file with your Django secret key
 4. Run "sudo docker-compose up"
 
 # To create an initial admin 
 1. Run "sudo docker ps" and check name of your container
-2. Run "sudo docker exec -it &lt;name from 5th paragraph&gt; python ./manage.py createsuperuser"
+2. Run "sudo docker exec -it &lt;name from first paragraph&gt; python ./manage.py createsuperuser"
 
 # Users with Admin privileges can:
 (All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")),
