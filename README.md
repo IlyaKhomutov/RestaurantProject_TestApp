@@ -29,17 +29,9 @@ versions. The mobile app always sends the build version in headers
 3. Create .env file with your Django secret key
 4. Run "sudo docker-compose up"
 
-# To create an initial admin 
-1. Run "sudo docker ps" and check name of this container
-2. Run "sudo docker exec -it &lt;name from first paragraph&gt; python ./manage.py createsuperuser"
-
-# Users with Admin privileges can:
-(All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")),
-- Get your token: ("/api/token/")
-- Register anybody: ("/api/register/")
-- Create restaurant: ("/api/restaurant/add/")
-- Update restaurant: ("/api/restaurant/<uuid:id>/update/")
-- Add menu for any restaurant: ("/api/adding_menu/")
+# Unauthorized users can: 
+- Register: ("registraion/")
+- Get their token: ("token/")
 
 # Regular users(employees) can:
 - Check their profile: ("/api/profile/")
@@ -48,6 +40,12 @@ versions. The mobile app always sends the build version in headers
 - Check all today's menus: ("/api/menus/")
 - Vote: ("api/vote/")
 - Check results of the today's vote: ("/api/result/")
+
+# Users with Admin privileges can:
+(All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
+- Create restaurant: ("/api/restaurant/add/")
+- Update restaurant: ("/api/restaurant/<uuid:id>/update/")
+- Add menu for any restaurant: ("/api/adding_menu/")
 
 # How to run tests:
 1. Create local virtual enviroment
