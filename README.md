@@ -34,6 +34,7 @@ versions. The mobile app always sends the build version in headers
 - Get their token: ("token/")
 
 # Regular users(employees) can:
+(All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
 - Check their profile: ("/api/profile/")
 - Check all restaurant and their menus for all days: ("/api/restaurants/")
 - Check today's menus of a specific restaurant: ("/api/restaurant/<uuid:id>/menus/")
@@ -42,7 +43,6 @@ versions. The mobile app always sends the build version in headers
 - Check results of the today's vote: ("/api/result/")
 
 # Users with Admin privileges can:
-(All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
 - Create restaurant: ("/api/restaurant/add/")
 - Update restaurant: ("/api/restaurant/<uuid:id>/update/")
 - Add menu for any restaurant: ("/api/adding_menu/")
