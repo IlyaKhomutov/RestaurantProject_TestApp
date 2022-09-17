@@ -14,6 +14,7 @@ class RestaurantAddSerializer(serializers.ModelSerializer):
     def validate(self, data):
         if Restaurant.objects.filter(name=data['name'], address=data['address']).exists():
             raise serializers.ValidationError("This restaurant is already exists")
+        return data
 
     def create(self, validated_data):
         return Restaurant.objects.create(**validated_data)
