@@ -30,8 +30,8 @@ versions. The mobile app always sends the build version in headers
 4. Run "sudo docker-compose up"
 
 # Unauthorized users can: 
-- Register: ("registraion/")
-- Get their token: ("token/")
+- Register: ("api/registraion/")
+- Get their token: ("api/token/")
 
 # Regular users(employees) can:
 (All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
