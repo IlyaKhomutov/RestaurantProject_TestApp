@@ -30,7 +30,7 @@ versions. The mobile app always sends the build version in headers
 4. Run "sudo docker-compose up"
 
 # To create an initial admin 
-1. Run "sudo docker ps" and check name of your container
+1. Run "sudo docker ps" and check name of this container
 2. Run "sudo docker exec -it &lt;name from first paragraph&gt; python ./manage.py createsuperuser"
 
 # Users with Admin privileges can:
