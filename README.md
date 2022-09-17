@@ -23,15 +23,9 @@ versions. The mobile app always sends the build version in headers
 5. Getting current day menu 
 6. Getting results for the current day
 
-# How to run tests:
-1. Create local virtual enviroment
-2. Run "pip install -r requirements.txt"
-3. Go to the folder with tests <tests/restaurant_project>
-4. Run them using command "pytest" or directly from "test_user.py"
-
 #   How to run the system:
 1. Clone code
-2 Go to application root folder: "RestaurantProject_TestApp/restaurants_project/"
+2. Go to application root folder: "RestaurantProject_TestApp/restaurants_project/"
 3. Create .env file with your Django secret key
 4. Run "sudo docker-compose up"
 
@@ -54,3 +48,9 @@ versions. The mobile app always sends the build version in headers
 - Check all today's menus: ("/api/menus/")
 - Vote: ("api/vote/")
 - Check results of the today's vote: ("/api/result/")
+
+# How to run tests:
+1. Create local virtual enviroment
+2. Run "pip install -r requirements.txt"
+3. Go to the folder with tests <tests/restaurant_project>
+4. Run them using command "pytest" or directly from "test_user.py"
