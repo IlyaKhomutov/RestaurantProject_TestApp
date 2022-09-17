@@ -43,6 +43,7 @@ versions. The mobile app always sends the build version in headers
 - Check results of the today's vote: ("/api/result/")
 
 # Users with Admin privileges can:
+- All the features of a regular user
 - Create restaurant: ("/api/restaurant/add/")
 - Update restaurant: ("/api/restaurant/<uuid:id>/update/")
 - Add menu for any restaurant: ("/api/adding_menu/")
