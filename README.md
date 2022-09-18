@@ -26,7 +26,7 @@ versions. The mobile app always sends the build version in headers
 #   How to run the system:
 1. Clone code
 2. Go to application root folder: "RestaurantProject_TestApp/restaurants_project"
-3. Create .env file with your Django secret key(SECRET_KEY=<your secret key>)
+3. Create .env file with your Django secret key(SECRET_KEY=&lt;your secret key&gt;)
 4. Run "sudo docker-compose up"
 
 # Unauthorized users can: 
