@@ -23,30 +23,38 @@ versions. The mobile app always sends the build version in headers
 5. Getting current day menu 
 6. Getting results for the current day
 
-#   How to run the system:
+# How to run the system:
 1. Clone code
 2. Go to application root folder: "RestaurantProject_TestApp/restaurants_project"
 3. Create .env file with your Django secret key(SECRET_KEY=&lt;your secret key&gt;)
 4. Run "sudo docker-compose up"
 
-# Unauthorized users can: 
-- Register: ("api/registraion/")
-- Get their token: ("api/token/")
+# Post setup:
+How to create an initial admin:
+1. Run "sudo docker ps" and check name of the container with image "restaurants_project_dm_web"
+2. Run "sudo docker exec -it &lt;name from first paragraph &gt; python ./manage.py createsuperuser"
+3. Enter your admin data
+
+After this you need to get your access token:
+1. Go to "/api/token/" and enter your data
+2. Get your token
 
 # Regular users(employees) can:
 (All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
-- Check their profile: ("/api/profile/")
-- Check all restaurant and their menus for all days: ("/api/restaurants/")
-- Check today's menus of a specific restaurant: ("/api/restaurant/&lt;uuid:id&gt;/menus/")
-- Check all today's menus: ("/api/menus/")
-- Vote: ("api/vote/")
-- Check results of the today's vote: ("/api/result/")
+- Check their profile: "/api/profile/"
+- Check all restaurant and their menus for all days: "/api/restaurants/"
+- Check today's menus of a specific restaurant: "/api/restaurant/&lt;uuid:id&gt;/menus/"
+- Check all today's menus: "/api/menus/"
+- Vote: "api/vote/"
+- Check results of the today's vote: "/api/result/"
 
 # Users with Admin privileges can:
+(All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
 - All the features of a regular user
-- Create restaurant: ("/api/restaurant/add/")
-- Update restaurant: ("/api/restaurant/&lt;uuid:id&gt;/update/")
-- Add menu for any restaurant: ("/api/adding_menu/")
+- Register anybody: "/api/registration/"
+- Create restaurant: "/api/restaurant/add/"
+- Update restaurant: "/api/restaurant/&lt;uuid:id&gt;/update/"
+- Add menu for any restaurant: "/api/adding_menu/"
 
 # How to run tests:
 1. Create local virtual enviroment and activate it
