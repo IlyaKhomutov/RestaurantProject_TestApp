@@ -42,7 +42,7 @@ After registering an account in the system, every person needs to get his access
 # Regular users(employees) can:
 (All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
 - Check their profile: "/api/profile/"
-- Check all restaurant and their menus for all days: "/api/restaurants/"
+- Check all restaurants and their menus for all days: "/api/restaurants/"
 - Check today's menus of a specific restaurant: "/api/restaurant/&lt;uuid:id&gt;/menus/"
 - Check all today's menus: "/api/menus/"
 - Vote: "api/vote/"
@@ -51,7 +51,7 @@ After registering an account in the system, every person needs to get his access
 # Users with Admin privileges can:
 (All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
 - All the features of a regular user
-- Register anybody: "/api/registration/"
+- Register anybody(other admins or regular users): "/api/registration/"
 - Create restaurant: "/api/restaurant/add/"
 - Update restaurant: "/api/restaurant/&lt;uuid:id&gt;/update/"
 - Add menu for any restaurant: "/api/adding_menu/"
