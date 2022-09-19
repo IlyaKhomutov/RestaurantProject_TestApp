@@ -9,6 +9,7 @@ from restaurants.models import Vote
 
 class RegistrationAPIView(generics.GenericAPIView):
     serializer_class = RegistrationSerializer
+    permission_classes = (IsAdminUser,)
 
     def post(self, request):
         serializer = self.get_serializer(data=request.data)
@@ -20,6 +21,7 @@ class RegistrationAPIView(generics.GenericAPIView):
 class ResultViewSet(viewsets.ModelViewSet):
     today = datetime.date.today()
     serializer_class = ResultSerializer
+    permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
         today = datetime.date.today()
