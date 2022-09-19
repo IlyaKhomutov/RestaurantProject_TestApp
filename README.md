@@ -35,7 +35,7 @@ How to create an initial admin:
 2. Run "sudo docker exec -it &lt;name from first paragraph &gt; python ./manage.py createsuperuser"
 3. Enter your admin data
 
-After this you need to get your access token:
+After registering an account in the system, every person needs to get his access token:
 1. Go to "/api/token/" and enter your data
 2. Get your token
 
