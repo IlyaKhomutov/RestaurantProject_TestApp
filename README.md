@@ -43,7 +43,6 @@ After registering an account in the system, every person needs to get his access
 (All following methods work only with the "Bearer &lt;your access token&gt;", which must be in the header "Authorization")
 - Check their profile: "/api/profile/"
 - Check all restaurants and their menus for all days: "/api/restaurants/"
-- Check today's menus of a specific restaurant: "/api/restaurant/&lt;uuid:id&gt;/menus/"
 - Check all today's menus: "/api/menus/"
 - Vote: "api/vote/"
 - Check results of the today's vote: "/api/result/"
@@ -57,7 +56,7 @@ After registering an account in the system, every person needs to get his access
 - Add menu for any restaurant: "/api/adding_menu/"
 
 # How to run tests:
-1. Create local virtual enviroment and activate it
+1. Create local virtual environment and activate it
 2. Run "pip install -r requirements.txt"
 3. Go to the folder with tests "tests/restaurant_project"
 4. Run them using command "pytest" or directly from "test_user.py"

@@ -30,8 +30,31 @@ class MenuSerializer(serializers.ModelSerializer):
         ]
 
 
+class RestaurantRetrieveSerializer(serializers.ModelSerializer):
+    menus = MenuSerializer(many=True)
+
+    class Meta:
+        model = Restaurant
+        fields = [
+            'id',
+            'name',
+            'address',
+            'menus',
+        ]
+
+
+class RestaurantSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Restaurant
+        fields = [
+            'id',
+            'name',
+            'address',
+        ]
+
+
 class TodayMenusSerializer(serializers.ModelSerializer):
-    restaurant = serializers.StringRelatedField()
+    restaurant = RestaurantSerializer()
 
     class Meta:
         model = Menu
@@ -49,17 +72,4 @@ class MenuAddingSerializer(serializers.ModelSerializer):
             'restaurant',
             'date',
             'image'
-        ]
-
-
-class RestaurantRetrieveSerializer(serializers.ModelSerializer):
-    menus = MenuSerializer(many=True)
-
-    class Meta:
-        model = Restaurant
-        fields = [
-            'id',
-            'name',
-            'address',
-            'menus',
         ]
