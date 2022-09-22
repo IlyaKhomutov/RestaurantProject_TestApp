@@ -2,6 +2,8 @@ import datetime
 from rest_framework import serializers, status
 from .models import CustomUser
 from restaurants.models import Vote
+import django.contrib.auth.password_validation as validators
+from django.core import exceptions
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
@@ -21,12 +23,21 @@ class RegistrationSerializer(serializers.ModelSerializer):
     def validate(self, args):
         email = args.get('email', None)
         username = args.get('username', None)
+        password = args.get('password')
         if CustomUser.objects.filter(email=email).exists():
             raise serializers.ValidationError({'email': "email already exists"})
         if CustomUser.objects.filter(username=username).exists():
             raise serializers.ValidationError({'username': "username already exists"})
 
-        return super().validate(args)
+        errors = dict()
+        try:
+            validators.validate_password(password=password)
+        except exceptions.ValidationError as e:
+            errors['password'] = list(e.messages)
+        if errors:
+            raise serializers.ValidationError(errors)
+
+        return args
 
     def create(self, validated_data):
         return CustomUser.objects.create_user(**validated_data)
@@ -77,6 +88,7 @@ class UserSerializer(serializers.ModelSerializer):
                 'restaurant',
                 'date'
             ]
+
     votes = InnerVoteSerializer(many=True)
 
     class Meta:
@@ -84,8 +96,6 @@ class UserSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'username',
-            'first_name',
-            'last_name',
             'email',
             'votes',
         ]
