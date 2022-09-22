@@ -32,7 +32,7 @@ versions. The mobile app always sends the build version in headers
 # Post setup:
 How to create an initial admin:
 1. Run "sudo docker ps" and check name of the container with image "restaurants_project_dm_web"
-2. Run "sudo docker exec -it &lt;name from first paragraph &gt; python ./manage.py createsuperuser"
+2. Run "sudo docker exec -it &lt;name from first paragraph&gt; python ./manage.py createsuperuser"
 3. Enter your admin data
 
 After registering an account in the system, every person needs to get his access token:
