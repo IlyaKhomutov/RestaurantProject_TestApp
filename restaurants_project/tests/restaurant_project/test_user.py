@@ -6,9 +6,9 @@ def test_admin_functions(client_admin, media_cleaning):
     """ALL ADMIN FUNCTIONS"""
 
     register_response = client_admin.post("/api/registration/",
-                                          dict(first_name='Ivan', last_name='Ivanov', email='ivan@me.com',
+                                          dict(email='ivan@me.com',
                                                username='Ivan123',
-                                               password='ivan456'))  # User registration
+                                               password='ivan4567'))  # User registration
 
     creating_restaurant_response = client_admin.post("/api/restaurant/add/", dict(name='McDonalds',
                                                         address='Kiltseva Road, 1, Kiev, 02000'))  # Creating restaurant
@@ -69,11 +69,3 @@ def test_menu(data_for_user, client_user, media_cleaning):
 
     menus_response = client_user.get("/api/menus/")
     assert menus_response.status_code == 200
-
-
-@pytest.mark.django_db
-def test_menu_spec(data_for_user, client_user, media_cleaning):
-    """TODAY'S MENUS OF SPECIFIC RESTAURANT"""
-
-    spec_menu_response = client_user.get(f"/api/restaurant/{data_for_user}/menus/")
-    assert spec_menu_response.status_code == 200

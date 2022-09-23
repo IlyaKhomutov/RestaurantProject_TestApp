@@ -10,7 +10,7 @@ client = APIClient()
 @pytest.fixture
 def client_admin():
     """CLIENT FOR ADMIN"""
-    admin = CustomUser.objects.create_user(first_name='admin', last_name='admin', email='admin@pro.com',
+    admin = CustomUser.objects.create_user(email='admin@pro.com',
                                            username='admin',
                                            password='admin', is_staff=True)
     admin_token_response = client.post("/api/token/",
@@ -24,7 +24,7 @@ def client_admin():
 def client_user():
     """CLIENT FOR USER"""
     user_token_response = client.post("/api/token/",
-                                      dict(username='Ivan123', password='ivan456'))  # Getting user token
+                                      dict(username='Ivan123', password='ivan4567'))  # Getting user token
     user_token = user_token_response.data['access']  # user token
     client.credentials(HTTP_AUTHORIZATION='Bearer {}'.format(user_token))  # Adding admin token to headers
     return client
@@ -32,7 +32,7 @@ def client_user():
 
 @pytest.fixture
 def data_for_user():
-    CustomUser.objects.create_user(first_name='admin', last_name='admin', email='admin@pro.com',
+    CustomUser.objects.create_user(email='admin@pro.com',
                                    username='admin',
                                    password='admin', is_staff=True)
 
@@ -43,8 +43,8 @@ def data_for_user():
     client.credentials(HTTP_AUTHORIZATION='Bearer {}'.format(admin_token))  # Adding admin token to headers
 
     client.post("/api/registration/",
-                dict(first_name='Ivan', last_name='Ivanov', email='ivan@me.com', username='Ivan123',
-                     password='ivan456'))  # User registration
+                dict(email='ivan@me.com', username='Ivan123',
+                     password='ivan4567'))  # User registration
 
     creating_restaurant_response = client.post("/api/restaurant/add/", dict(name='McDonalds',
                                                                             address='Kiltseva Road, 1, Kiev, 02000'))  # Creating restaurant
